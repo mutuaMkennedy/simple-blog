@@ -1,0 +1,35 @@
+{%load static%}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="wrapper">
+        <a class='logo' href="{% url 'articles:index' %}"><img src="{% static 'm-logo.png' %}"></a>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit"> Logout</button>
+                            </form>
+                        </li>
+                        <li><a href="{% url 'articles:article_create' %}"class="highlight">Create Article</a></li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+    </header>
+    <div class="wrapper">
+         {% block content %}
+         {% endblock %}
+    </div>
+</body>
+</html>

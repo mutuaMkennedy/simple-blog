@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="articles">
+        {% for articles in articles %}
+            <div class="article">
+                <h2><a href="{% url 'articles:article_detail' slug=articles.slug %}">{{ articles.title }}</a></h2>
+                <p>{{ articles.snippet }}</p>
+                <p class="date">{{ articles.date }}</p>
+                <p class="author">added by:{{ articles.author.username }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock  %}
+
+
+
+
+
+
+
+
+
+
+
+
+
