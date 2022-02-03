@@ -15,8 +15,6 @@ class Article(Page):
     date = models.DateTimeField(auto_now_add=True)
     # ADD THUMBNAIL
     thumb = models.ImageField(default='default.png', blank=True)
-    # ADD AUTHOR
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, default=None, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title
