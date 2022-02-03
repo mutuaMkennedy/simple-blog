@@ -132,6 +132,8 @@ AUTH_USER_MODEL = 'accounts.User'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+SITE_ID = 1
+
 WAGTAIL_SITE_NAME = 'My Blog'
 
 WAGTAILSEARCH_BACKENDS = {
