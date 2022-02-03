@@ -1,195 +1,124 @@
 body{
-    background-color: orangered;
-    background-image: url(left.jpg);
-    background-repeat: no-repeat;
-    color: #fff;
-}
-
-body *{
-    font-family: "Times New Roman";
+    background-color:#f5f5f5;
+    font-family: "Poppins", "Open Sans";
 }
 
 h1,h2,h3,h4.h5 {
+    font-family:inherit;
     font-weight: normal;
     margin: 0;
 }
 
 a, a:hover, a:visited{
-    color: #fff;
     text-decoration: none;
 }
 
-.wrapper{
-    max-width: 700px;
+.navbar-fixed nav{
+    background:#fff;
+}
+
+.navbar-inner{
+    width:100%;
+    height:100%;
     margin: 0 auto;
+    background:#fff;
+    max-width:1080px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:Poppins, Open Sans;
 }
 
-div.wrapper h1{
-    text-align: center;
-    margin: 100px auto;
-    font-size: 2.4em;
-}
-
-header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px 0;
-}
-
-nav{
-    justify-self: end;
-}
-
-nav li{
-    display: inline-block;
-    margin-left: 20px;
-}
-
-nav button{
-    background: none;
-    color: gold;
-    cursor: pointer;
-    border: 0;
-    font-size: 1em;
-}
-
-.articles{
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     grid-gap: 30px;
- }
-
-.article{
-    padding: 10px;
-    border: 1px solid gold;
-    position: relative;
-    padding-bottom: 30px;
-}
-
-.article h2{
-     font-size: 1.2em;
-    color: gold;
-}
-
-.article .author{
-    padding: 10px;
-    background: gold;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    color: black;
-    font-size:0.8em;
-}
-
-.article-detail .article{
-    padding: 0;
-}
-
-.article-detail .article img{
-    max-width: 100%;
-}
-
-.article-detail .article h2{
-    text-align: center;
-    margin: 20px auto;
-    font-size: 2em;
-}body{
-    background-color: orangered;
-    background-image: url(left.jpg);
-    background-repeat: no-repeat;
-    color: #fff;
-}
-
-body *{
-    font-family: "Times New Roman";
-}
-
-h1,h2,h3,h4.h5 {
-    font-weight: normal;
-    margin: 0;
-}
-
-a, a:hover, a:visited{
-    color: #fff;
-    text-decoration: none;
-}
-
-.wrapper{
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.wrapper .logo img{
+.navbar-inner a.logo , .navbar-inner .logo img{
+    height:45px;
     width:45px;
 }
 
-div.wrapper h1{
-    text-align: center;
-    margin: 100px auto;
-    font-size: 2.4em;
-}
-
-header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px 0;
-}
-
-nav{
-    justify-self: end;
-}
-
-nav li{
+.navbar-inner li{
     display: inline-block;
-    margin-left: 20px;
+    margin-left:0px !important;
+    margin-right:0px !important;
+    color:#000;
 }
 
-nav button{
-    background: none;
-    color: gold;
-    cursor: pointer;
-    border: 0;
-    font-size: 1em;
+.navbar-inner li a,
+.navbar-inner li  button{
+    font-size:13px;
+    color:#000;
+    font-family:Poppins, Open Sans;
+}
+
+.navbar-inner li button{
+    background:transparent;
+    border:none;
+    padding:0;
+}
+
+.navbar-inner li a:hover,
+.navbar-inner li button:hover{
+    cursor:pointer;
+    background:transparent;
+    color:#2ba2ca !important;
+}
+
+.wrapper{
+    padding:10px;
+    
 }
 
 .articles{
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     grid-gap: 30px;
- }
+    max-width:1080px;
+}
 
 .article{
-    padding: 10px;
-    border: 1px solid gold;
+    box-shadow:0 0 5px 1px #eee;
     position: relative;
     padding-bottom: 30px;
+    border-radius:10px;
+    border:1px solid rgb(0 0 0 / 0.25);
+    margin-bottom:15px;
 }
 
-.article h2{
-     font-size: 1.2em;
-    color: gold;
+.article img{
+    width:100%;
+    height:350px;
 }
 
-.article a{
-    color: gold;
+.article .thumb img{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
 }
 
-.article .author{
-    padding: 10px;
-    background: gold;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    color: black;
-    font-size:0.8em;
+.article .details-snip{
+    padding:10px;
 }
 
-.article .date{
-    color: slategrey;
-    font-size: 1em;
+.article .details-snip h2{
+    font-size:20px;
+    font-weight:600;
+    color:#000;
+    margin:0;
+    margin-bottom:10px;
 }
+
+.article .details-snip p{
+    color:#000;
+    font-size:13px;
+    margin:0;
+    margin-bottom:10px;
+}
+
+.article .card-footer p{
+     margin:0;
+     font-size:12px;
+     color:#000;
+}
+
+.article .card-footer p.author{
+    text-transform:capitalize;
+}
+
+
 
 .article-detail .article{
     padding: 0;
@@ -219,13 +148,6 @@ nav button{
     display: block;
     margin: 20px 0 0 0;
     padding: 10px;
-}
-
-a.highlight{
-    border: 1px solid gold;
-    padding: 10px;
-    border-radius: 4px;
-    color: gold;
 }
 
 .helptext, .helptext ul{
@@ -272,13 +194,6 @@ a.highlight{
     display: block;
     margin: 20px 0 0 0;
     padding: 10px;
-}
-
-a.highlight{
-    border: 1px solid gold;
-    padding: 10px;
-    border-radius: 4px;
-    color: gold;
 }
 
 .helptext, .helptext ul{
