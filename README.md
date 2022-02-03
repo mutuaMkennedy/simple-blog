@@ -1,5 +1,5 @@
 # Introduction
-This is a simple Django blog application using wagtail CMS. The application also includes common configs required when setting up a production-ready Django project.
+This is a simple Django blog application using wagtail CMS.
 
 # Getting started
 Clone the repository:
