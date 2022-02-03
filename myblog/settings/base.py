@@ -29,7 +29,25 @@ MY_APPS = [
     'accounts',
 ]
 
-INSTALLED_APPS = REQ_APPS + MY_APPS
+PACK_APPS = [
+#  Wagtail CMS
+'wagtail.contrib.forms',
+'wagtail.contrib.redirects',
+'wagtail.embeds',
+'wagtail.sites',
+'wagtail.users',
+'wagtail.snippets',
+'wagtail.documents',
+'wagtail.images',
+'wagtail.search',
+'wagtail.admin',
+'wagtail.core',
+
+'modelcluster',
+'taggit',
+]
+
+INSTALLED_APPS = REQ_APPS + MY_APPS + PACK_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
