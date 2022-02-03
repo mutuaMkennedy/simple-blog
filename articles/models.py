@@ -11,7 +11,6 @@ from wagtail.search import index
 
 # TO DO: Add cloudinary CDN to handle media files
 class Article(Page):
-    title = models.CharField(max_length=125)
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
