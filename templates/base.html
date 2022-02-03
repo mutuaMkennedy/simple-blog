@@ -4,32 +4,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" type="image/png" href="{%static 'm-logo.png'%}">
+    <meta name="description" content="Your daily cup of simple news">
+    <meta name="keywords" content="Simple news">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet "  media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Libre+Baskerville&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <!-- no-JS fallback -->
+  <noscript>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  </noscript>
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    {% block title %}{% endblock %}
 </head>
 <body>
-    <header class="wrapper">
-        <a class='logo' href="{% url 'articles:index' %}"><img src="{% static 'm-logo.png' %}"></a>
-            <nav>
-                <ul>
-                    {% if user.is_authenticated %}
-                        <li>
-                            <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
-                                {% csrf_token %}
-                                <button type="submit"> Logout</button>
-                            </form>
-                        </li>
-                        <li><a href="{% url 'articles:article_create' %}"class="highlight">Create Article</a></li>
-                    {% else %}
-                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
-                    {% endif %}
-                </ul>
+    <header>
+        <div class="navbar-fixed">
+            <nav role="navigation">
+                <div class="navbar-inner">
+                    <a class='logo' href="{% url 'articles:index' %}"><img src="{% static 'm-logo.png' %}"></a>
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li>
+                                <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit"> Logout</button>
+                                </form>
+                            </li>
+                            <li><a href="{% url 'articles:article_create' %}"class="highlight">Create Article</a></li>
+                        {% else %}
+                            <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                            <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </nav>
+        </div>
     </header>
     <div class="wrapper">
          {% block content %}
          {% endblock %}
     </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
