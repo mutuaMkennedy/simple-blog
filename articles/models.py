@@ -11,7 +11,7 @@ from wagtail.search import index
 
 # TO DO: Add cloudinary CDN to handle media files
 class Article(Page):
-    body = models.TextField()
+    body = RichTextField()
     date = models.DateTimeField(auto_now_add=True)
     # ADD THUMBNAIL
     thumb = models.ImageField(default='default.png', blank=True)
