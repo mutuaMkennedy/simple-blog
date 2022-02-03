@@ -1,18 +1,35 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% block title %}<title>You daily cup of simple news</title>{% endblock%}
 
 {% block content %}
-    <div class="articles">
-        {% for articles in articles %}
-            <div class="article">
-                <h2><a href="{% url 'articles:article_detail' slug=articles.slug %}">{{ articles.title }}</a></h2>
-                <p>{{ articles.snippet }}</p>
-                <p class="date">{{ articles.date }}</p>
-                <p class="author">added by:{{ articles.author.username }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col s12 md8 l8 xl8">
+            <div class="articles">
+                {% for article in articles %}
+                    <a href="{% url 'articles:article_detail' slug=article.slug %}">
+                        <div class="article">
+                            <div class="thumb">
+                                <img src="{{article.thumb.url }}">
+                            </div>
+                            <div class="details-snip">
+                                <h2>{{ article.title }}</h2>
+                                <p>{{ article.snippet }}</p>
+                                <div class="card-footer">
+                                    <p class="date">{{ article.date }}</p>
+                                    <p class="author">{{ article.owner.username}}</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     </div>
+</div>
 {% endblock  %}
 
 
