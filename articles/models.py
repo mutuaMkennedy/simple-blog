@@ -13,7 +13,6 @@ from wagtail.search import index
 class Article(Page):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField()
     # ADD THUMBNAIL
     thumb = models.ImageField(default='default.png', blank=True)
     # ADD AUTHOR
