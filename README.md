@@ -15,3 +15,8 @@ Run server:
 ```
 python manage.py runserver --settings=myblog.settings.dev
 ```
+
+# Testing
+```
+python manage.py test --settings=myblog.settings.dev
+```
